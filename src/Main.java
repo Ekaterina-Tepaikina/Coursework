@@ -1,14 +1,14 @@
 import java.util.Arrays;
 
 public class Main {
-    public static int countTotalSalary (Employee[] employees){
+    public static int countTotalSalary (){
         int totalSalary = 0;
         for (Employee employee : employees) {
             totalSalary += employee.getSalary();
         }
         return totalSalary;
     }
-    public static Employee findMinSal (Employee[] employees) {
+    public static Employee findMinSal () {
         int minSal = employees[0].getSalary();
         byte n = 0;
         for (byte i = 0; i < employees.length; i++)
@@ -19,7 +19,7 @@ public class Main {
         return employees[n];
     }
 
-    public static Employee findMaxSal (Employee[] employees) {
+    public static Employee findMaxSal () {
         int maxSal = employees[0].getSalary();
         byte n = 0;
         for (byte i = 0; i < employees.length; i++)
@@ -30,17 +30,11 @@ public class Main {
         return employees[n];
     }
 
-    public static int countAverageSalary (Employee[] employees) {
-        int totalSalary = 0;
-        byte s = 0;
-        for (Employee employee : employees) {
-            totalSalary += employee.getSalary();
-            s++;
-        }
-        return totalSalary/s;
+    public static double countAverageSalary () {
+        return (double) countTotalSalary() / employees.length;
     }
 
-    public static void FIO (Employee[] employees) {
+    public static void FIO () {
         for (Employee employee : employees) {
             System.out.println(employee.getFIO());
         }
@@ -63,10 +57,10 @@ public class Main {
         System.out.println(Arrays.toString(employees));
         employees[4].setSalary(122_400);
         System.out.println(employees[4]);
-        System.out.println(countTotalSalary(employees));
-        System.out.println(findMinSal(employees));
-        System.out.println(findMaxSal(employees));
-        System.out.println(countAverageSalary(employees));
-        FIO(employees);
+        System.out.println(countTotalSalary());
+        System.out.println(findMinSal());
+        System.out.println(findMaxSal());
+        System.out.println(countAverageSalary());
+        FIO();
     }
 }

@@ -1,6 +1,6 @@
 public class Employee {
-    public static byte count;
-    private byte id;
+    public static int count;
+    private int id;
     private String FIO;
     private int department;
     private int salary;
@@ -13,7 +13,7 @@ public class Employee {
         count++;
     }
 
-    public byte getId() {
+       public int getId() {
         return id;
     }
 
@@ -35,6 +35,10 @@ public class Employee {
 
     public void setSalary(int salary) {
         this.salary = salary;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
     }
 
     @Override
